@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    >
+    <item
+        android:title="Search"
+        android:icon="@drawable/searchicon"
+
+        app:showAsAction="always|collapseActionView"
+        android:orderInCategory="1"
+
+        android:id="@+id/action_search"
+        app:actionViewClass="android.widget.SearchView"
+        />
+
+
+    <item
+    android:title="Article"
+    android:id="@+id/action_article"
+    android:checkable="true"
+    app:showAsAction="never"
+    android:orderInCategory="3"
+
+    />
+    <item
+        android:title="Slideshow"
+        android:id="@+id/action_slideshow"
+        android:checkable="true"
+        app:showAsAction="never"
+        android:orderInCategory="4"
+        />
+    <item
+        android:title="Video"
+        android:checkable="true"
+        android:id="@+id/action_video"
+        app:showAsAction="never"
+        android:orderInCategory="5"
+        />
+
+
+</menu>

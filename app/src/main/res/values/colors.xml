@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#D32F2F</color>
+    <color name="colorPrimaryDark">#B71C1C</color>
+    <color name="colorAccent">#1976D2</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000</color>
+    <color name="darker_grey">#9E9E9E</color>
+    <color name="grey">#B0BEC5</color>
+    <color name="backgroundRow">#01579B</color>
+    <color name="backgroundFragment">#2b2b2b</color>
+    <color name="refresh1">#ff1744</color>
+    <color name="refresh2">#d50000</color>
+    <color name="refresh3">#ff6f00</color>
+    <color name="refresh4">#ffff00</color>
+    <color name="refresh5">#00e676</color>
+    <color name="refresh6">#69f0ae</color>
+    <color name="refresh7">#00e5ff</color>
+    <color name="refresh8">#4527a0</color>
+</resources>

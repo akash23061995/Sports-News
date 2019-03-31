@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/swiperefresh"
@@ -7,12 +7,23 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/mainlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        >
 
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="90dp"
+            android:layout_alignParentTop="true">
+
+
+        </android.support.v4.view.ViewPager>
         <android.support.design.widget.TabLayout
             android:id="@+id/tablayout_id"
             android:layout_width="match_parent"
@@ -21,14 +32,17 @@
             app:tabGravity="fill"
             app:tabIndicatorColor="@color/colorAccent"
             app:tabMode="fixed"></android.support.design.widget.TabLayout>
-
-        <android.support.v4.view.ViewPager
-            android:id="@+id/viewpager_id"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-        </android.support.v4.view.ViewPager>
-
-    </LinearLayout>
-</android.support.v4.widget.SwipeRefreshLayout>
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fab_refresh"
+            app:fab_size="normal"
+            app:fab_colorNormal="@color/refresh1"
+            app:fab_colorPressed="@color/refresh7"
+            app:fab_colorRipple="@color/refresh5"
+            android:src="@drawable/ic_refresh"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -3,7 +3,9 @@ package com.sportskeeda;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -64,15 +66,10 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
         setContentView(R.layout.activity_main);
 
         viewPager = findViewById(R.id.viewpager_id);
-
-        final SwipeRefreshLayout swipe = findViewById(R.id.swiperefresh);
-        swipe.setColorSchemeColors(getResources().getColor(R.color.refresh1), getResources().getColor(R.color.refresh2),
-                getResources().getColor(R.color.refresh3), getResources().getColor(R.color.refresh4)
-                , getResources().getColor(R.color.refresh5), getResources().getColor(R.color.refresh6), getResources().getColor(R.color.refresh7),
-                getResources().getColor(R.color.refresh8));
-        swipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+       com.github.clans.fab.FloatingActionButton floatingActionButtonRefresh = findViewById(R.id.fab_refresh);
+        floatingActionButtonRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onRefresh() {
+            public void onClick(View view) {
 
                 selectedTab = viewPager.getCurrentItem();
                 Realm realm = Realm.getDefaultInstance();
@@ -80,10 +77,9 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
                 realm.deleteAll();
                 realm.commitTransaction();
                 fetchJSON();
-
-
             }
         });
+
 
 
         if (getIntent() != null) {

@@ -74,23 +74,8 @@ public class FragmentArticle extends Fragment implements RecyclerViewAdapter.Lis
 
         return v;
     }
-    @Override
-    public boolean onContextItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case 1:
-//                String link = recyclerViewAdapter.sharelink();
-                Intent sharingIntent = new Intent(Intent.ACTION_SEND);
-                sharingIntent.setType("text/plain");
-                sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject Here");
-                sharingIntent.putExtra(Intent.EXTRA_TEXT, link);
-                startActivity(Intent.createChooser(sharingIntent, "Share Using"));
 
 
-                break;
-        }
-
-        return super.onContextItemSelected(item);
-    }
     public void updateList(ArrayList<News> newArrayList) {
         if(newArrayList!=null){
             myrecyclerview.setVisibility(View.VISIBLE);

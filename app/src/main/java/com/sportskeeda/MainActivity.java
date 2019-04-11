@@ -197,11 +197,9 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
                 RealmResults<News> results = realm.where(News.class).findAll();
                 link = results.get(itemIndex).getPermalink();
 
-                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
-                sharingIntent.setType("text/plain");
-                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "For more Information Click here");
-                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, link);
-                startActivity(Intent.createChooser(sharingIntent, "Share Using"));
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(link));
+                startActivity(i);
             }
         });
 

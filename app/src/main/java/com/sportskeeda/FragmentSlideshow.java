@@ -1,6 +1,7 @@
 package com.sportskeeda;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -86,10 +87,9 @@ public class FragmentSlideshow extends Fragment implements RecyclerViewAdapter.L
                 RealmResults<News> results = realm.where(News.class).equalTo("type", "slideshow").findAll();
                 link=results.get(itemIndex).getPermalink();
 
-                Intent sharingIntent = new Intent(Intent.ACTION_SEND);
-                sharingIntent.setType("text/plain");
-                sharingIntent.putExtra(Intent.EXTRA_TEXT,"For More Information Click Here: "+ link);
-                startActivity(Intent.createChooser(sharingIntent, "Share Using"));
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(link));
+                startActivity(i);
             }
         });
 

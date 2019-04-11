@@ -8,16 +8,31 @@
     tools:context=".Splash">
 
     <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:id="@+id/logo_id"
+        android:src="@drawable/sportssplash"
+       android:scaleType="centerCrop"
+       />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_background"
+        />
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="202dp"
-        android:id="@+id/logo_id"
-        android:src="@drawable/logo"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="214dp" />
-
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="34dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Sports News"
+        android:textColor="#FFF"
+        android:textSize="40sp" />
     <com.sportskeeda.HorizontalDottedProgress
         android:layout_height="20dp"
         android:layout_width="50dp"

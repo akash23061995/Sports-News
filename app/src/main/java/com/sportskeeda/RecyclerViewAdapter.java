@@ -63,7 +63,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return mData.size();
     }
 
-    public   class MyViewHolder extends  RecyclerView.ViewHolder   implements View.OnLongClickListener {
+    public   class MyViewHolder extends  RecyclerView.ViewHolder   implements View.OnClickListener {
 
         private TextView title,author;
         private ImageView img;
@@ -75,7 +75,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             img= itemView.findViewById(R.id.img);
             card= itemView.findViewById(R.id.card);
 
-        itemView.setOnLongClickListener(this);
+        itemView.setOnClickListener(this);
 
         }
 
@@ -86,13 +86,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
 
         @Override
-        public boolean onLongClick(View v) {
+        public void onClick(View v) {
 
             final int position= getAdapterPosition();
 
             mOnClickListener.onListItemClick(position,newslink);
-            return true;
+
         }
+
+
     }
     public  void updateList(List<News>  newList){
         mData= new ArrayList<>();

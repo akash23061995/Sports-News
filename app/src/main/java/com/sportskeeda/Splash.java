@@ -84,7 +84,7 @@ public class Splash extends AppCompatActivity {
                     String title = null;
                     String author = null;
                     String imageurl = null;
-                    JSONObject obj = null;
+                     JSONObject obj = null;
                     String type = null;
                     String permalink = null;
                     try {
